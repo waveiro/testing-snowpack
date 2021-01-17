@@ -4,7 +4,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    src: '/dist',
-    public: '/src'
-  }
+    src: '/',
+  },
+  devOptions: {
+    secure: true,
+  },
+  buildOptions: {
+    out: 'dist',
+  },
+  plugins: [
+  ]
 };

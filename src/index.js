@@ -1,13 +1,16 @@
-import { camelCase } from 'lodash';
-import { of } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { helloWorld } from "./hello-word";
 
-of('weird text')
-  .pipe(
-    map(x => camelCase(x)),
-    take(1)
-  ).subscribe(console.log);
+const body = document.querySelector("body");
+
+fromEvent(body, "click").pipe(
+  take(3)
+).subscribe((console.log));
 
 helloWorld();
+
+new Promise((resolve, reject) => {
+  resolve();
+}).then(_ => console.log('resolve'));
 
