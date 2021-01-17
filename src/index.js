@@ -2,6 +2,9 @@ import { fromEvent } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { helloWorld } from "./hello-word";
 
+
+import './index.scss';
+
 const body = document.querySelector("body");
 
 fromEvent(body, "click").pipe(
@@ -12,5 +15,5 @@ helloWorld();
 
 new Promise((resolve, reject) => {
   resolve();
-}).then(_ => console.log('resolve'));
+}).then(() => console.log('resolve'));
 
